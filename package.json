@@ -1,0 +1,38 @@
+{
+  "name": "httpmetrics",
+  "description": "HTTP monkey-patching to insert metrics to each http call",
+  "version": "0.0.1",
+  "author": "Rohini Harendra <rohini.raghav@gmail.com>",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/yahoo/httpmetrics.git"
+  },
+  "bugs": {
+      "url" : "http://github.com/yahoo/httpmetrics/issues"
+  },
+  "keywords": [
+    "httpmetrics", "yahoo"
+  ],
+  "licenses":[
+        {
+            "type" : "BSD",
+            "url" : "https://github.com/yahoo/httpmetrics/blob/master/LICENSE"
+        }
+    ],
+  "engines": { "node": ">=0.6" },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "jshint": "~0.9.0",
+    "yui-lint": "~0.1.1",
+    "istanbul": "~0.1.8",
+    "vows": "*",
+    "mockery" : "*"
+  },
+  "main": "./lib/httpmetrics.js",
+  "scripts": {
+      "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+      "test": "istanbul cover --print both vows -- --spec ./tests/*.js"
+  }
+}
+
