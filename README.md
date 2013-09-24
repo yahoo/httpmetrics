@@ -58,4 +58,13 @@ httpmetrics.on('httpmetrics', function(metricType, metrics) {
 
 Please refer to the examples/httpmetrics-app.js for details
 
+# Build Status
+
+[![Build Status](https://secure.travis-ci.org/yahoo/httpmetrics.png?branch=master)](http://travis-ci.org/yahoo/httpmetrics)
+
+# Node Badge
+
+[![NPM](https://nodei.co/npm/httpmetrics.png)](https://nodei.co/npm/httpmetrics/)
+
+
 
