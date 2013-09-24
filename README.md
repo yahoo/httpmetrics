@@ -30,6 +30,7 @@ Upon receiving a response back on the socket, module emits 'httpmetrics' event w
  }
 ```
 
+This package is tested only with Node versions 8 and 10.
 
 # install
 
