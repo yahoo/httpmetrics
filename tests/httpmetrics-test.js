@@ -242,6 +242,43 @@ var tests = {
         }
 
     },
+    'testing onSocket for secureConnect': {
+        topic: function () {
+            var ModHttp = require(sutPath),
+                sut = ModHttp.appendHttpMetrics(),
+                that = this,
+                delay = 200,
+                req = {
+                    'mod_config': {
+                        'enable' : 'true'
+                    }
+                },
+                socket = new events.EventEmitter(),
+                self = this;
+            httpMock.ClientRequest.prototype.onSocket(socket);
+
+            timer.setTimeout(function () {
+                    //Emit connect event after 'delay' milliseconds
+                    //Our metrics should indicate that value
+                socket.emit('secureConnect');
+                self.callback(null, {
+                    socket: socket,
+                    delay: delay
+                });
+            }, delay + 1);
+        },
+        'test socket data': function (topic) {
+            assert.ok(topic.socket.socketConnectTime !== null);
+            assert.ok(httpMock.testMetrics.ClientRequest.onSocket !== null);
+            assert.equal('localhost', httpMock.testMetrics.ClientRequest.onSocket.host);
+            assert.ok(httpMock.testMetrics.ClientRequest.onSocket.connectTime >= topic.delay);
+            
+        },
+        tearDown: function () {
+            tearDown();
+        }
+
+    },
 
     'testing onSocket free': {
         topic: function () {

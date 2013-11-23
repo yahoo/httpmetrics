@@ -1,6 +1,6 @@
 # httpmetrics
 
-Nodejs module that reports metrics, both for request and response, to outgoing HTTP connections made from the app.
+Nodejs module that reports metrics, both for request and response, to outgoing HTTP/HTTPS connections made from the app.
 The module hooks into the HTTP methods of node to compute metrics.
 Upon completing outgoing request, module emits 'httpmetrics' event with 'request' as metric type.
 Upon receiving a response back on the socket, module emits 'httpmetrics' event with 'response' as metric type.
