@@ -1,7 +1,7 @@
 {
   "name": "httpmetrics",
   "description": "HTTP monkey-patching to insert metrics to each http call",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Rohini Harendra <rohini.raghav@gmail.com>",
   "repository": {
       "type": "git",
